@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: cognitive-ai-backend
+    runtime: node
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGO_URI
+        sync: false   # Set this manually in Render dashboard
+      - key: JWT_SECRET
+        sync: false   # Set this manually in Render dashboard
+      - key: JWT_EXPIRES_IN
+        value: 7d
+      - key: BCRYPT_SALT_ROUNDS
+        value: 10
