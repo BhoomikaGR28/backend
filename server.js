@@ -17,10 +17,10 @@ const morgan = require("morgan");
 // Safely load connectDB after env vars are set
 let connectDB;
 try {
-  connectDB = require("./config/db");
+  connectDB = require("./db");
 } catch (e) {
-  console.error("❌ Could not load config/db.js:", e.message);
-  console.error("Make sure the config/ folder exists and db.js is inside it.");
+  console.error("❌ Could not load db.js:", e.message);
+  console.error("Make sure the db.js exist in the same folder as server.js.");
   process.exit(1);
 }
 
